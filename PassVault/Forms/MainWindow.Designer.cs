@@ -26,31 +26,33 @@ namespace PassVault {
         private void InitializeComponent() {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.openMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updatesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
-            this.buttonChange = new System.Windows.Forms.Button();
-            this.column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buttonUpdate = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -71,101 +73,115 @@ namespace PassVault {
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
+            this.newMenuItem,
+            this.toolStripSeparator4,
+            this.openMenuItem,
+            this.saveMenuItem,
+            this.saveAsMenuItem,
             this.toolStripSeparator3,
-            this.settingsToolStripMenuItem,
+            this.settingsMenuItem,
             this.toolStripSeparator1,
-            this.exitStripMenuItem});
+            this.exitMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // openToolStripMenuItem
+            // newMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + O";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.openToolStripMenuItem.Text = "Open...";
+            this.newMenuItem.Name = "newMenuItem";
+            this.newMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.newMenuItem.Text = "New...";
+            this.newMenuItem.Click += new System.EventHandler(this.NewMenuItem_Click);
             // 
-            // saveToolStripMenuItem
+            // toolStripSeparator4
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + S";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.saveToolStripMenuItem.Text = "Save";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(158, 6);
             // 
-            // saveAsToolStripMenuItem
+            // openMenuItem
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.saveAsToolStripMenuItem.Text = "Save as...";
+            this.openMenuItem.Name = "openMenuItem";
+            this.openMenuItem.ShortcutKeyDisplayString = "Ctrl + O";
+            this.openMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.openMenuItem.Text = "Open...";
+            // 
+            // saveMenuItem
+            // 
+            this.saveMenuItem.Name = "saveMenuItem";
+            this.saveMenuItem.ShortcutKeyDisplayString = "Ctrl + S";
+            this.saveMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.saveMenuItem.Text = "Save";
+            // 
+            // saveAsMenuItem
+            // 
+            this.saveAsMenuItem.Name = "saveAsMenuItem";
+            this.saveAsMenuItem.ShortcutKeyDisplayString = "";
+            this.saveAsMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.saveAsMenuItem.Text = "Save as...";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(158, 6);
             // 
-            // settingsToolStripMenuItem
+            // settingsMenuItem
             // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsMenuItem.Name = "settingsMenuItem";
+            this.settingsMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.settingsMenuItem.Text = "Settings";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
             // 
-            // exitStripMenuItem
+            // exitMenuItem
             // 
-            this.exitStripMenuItem.Name = "exitStripMenuItem";
-            this.exitStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.exitStripMenuItem.Text = "Exit";
+            this.exitMenuItem.Name = "exitMenuItem";
+            this.exitMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.exitMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.findToolStripMenuItem});
+            this.findMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // findToolStripMenuItem
+            // findMenuItem
             // 
-            this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl + F";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.findToolStripMenuItem.Text = "Find...";
+            this.findMenuItem.Name = "findMenuItem";
+            this.findMenuItem.ShortcutKeyDisplayString = "Ctrl + F";
+            this.findMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.findMenuItem.Text = "Find...";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.checkForUpdatesToolStripMenuItem,
+            this.updatesMenuItem,
             this.toolStripSeparator2,
-            this.aboutToolStripMenuItem});
+            this.aboutMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
-            // checkForUpdatesToolStripMenuItem
+            // updatesMenuItem
             // 
-            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.checkForUpdatesToolStripMenuItem.Text = "Check for updates";
+            this.updatesMenuItem.Name = "updatesMenuItem";
+            this.updatesMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.updatesMenuItem.Text = "Check for updates";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(167, 6);
             // 
-            // aboutToolStripMenuItem
+            // aboutMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutMenuItem.Name = "aboutMenuItem";
+            this.aboutMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.aboutMenuItem.Text = "About";
             // 
             // tableLayoutPanel
             // 
@@ -182,10 +198,12 @@ namespace PassVault {
             this.tableLayoutPanel.Controls.Add(this.textBoxPassword, 2, 1);
             this.tableLayoutPanel.Controls.Add(this.buttonAdd, 3, 1);
             this.tableLayoutPanel.Controls.Add(this.buttonRemove, 4, 1);
-            this.tableLayoutPanel.Controls.Add(this.buttonChange, 5, 1);
+            this.tableLayoutPanel.Controls.Add(this.buttonUpdate, 5, 1);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
+            this.tableLayoutPanel.Padding = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.tableLayoutPanel.RowCount = 2;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -210,7 +228,8 @@ namespace PassVault {
             this.tableLayoutPanel.SetColumnSpan(this.dataGridView, 6);
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView.Enabled = false;
+            this.dataGridView.Location = new System.Drawing.Point(8, 3);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -221,69 +240,8 @@ namespace PassVault {
             this.dataGridView.ShowCellErrors = false;
             this.dataGridView.ShowCellToolTips = false;
             this.dataGridView.ShowEditingIcon = false;
-            this.dataGridView.Size = new System.Drawing.Size(778, 401);
+            this.dataGridView.Size = new System.Drawing.Size(768, 396);
             this.dataGridView.TabIndex = 0;
-            // 
-            // textBoxDescription
-            // 
-            this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Location = new System.Drawing.Point(3, 410);
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.PlaceholderText = "Description";
-            this.textBoxDescription.Size = new System.Drawing.Size(172, 23);
-            this.textBoxDescription.TabIndex = 1;
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxLogin.Location = new System.Drawing.Point(181, 410);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.PlaceholderText = "Login";
-            this.textBoxLogin.Size = new System.Drawing.Size(136, 23);
-            this.textBoxLogin.TabIndex = 2;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPassword.Location = new System.Drawing.Point(323, 410);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PlaceholderText = "Password";
-            this.textBoxPassword.Size = new System.Drawing.Size(136, 23);
-            this.textBoxPassword.TabIndex = 3;
-            this.textBoxPassword.UseSystemPasswordChar = true;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAdd.Location = new System.Drawing.Point(465, 410);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(100, 24);
-            this.buttonAdd.TabIndex = 4;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
-            // 
-            // buttonRemove
-            // 
-            this.buttonRemove.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonRemove.Location = new System.Drawing.Point(571, 410);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(100, 24);
-            this.buttonRemove.TabIndex = 5;
-            this.buttonRemove.Text = "Remove";
-            this.buttonRemove.UseVisualStyleBackColor = true;
-            this.buttonRemove.Click += new System.EventHandler(this.ButtonRemove_Click);
-            // 
-            // buttonChange
-            // 
-            this.buttonChange.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonChange.Location = new System.Drawing.Point(677, 410);
-            this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(104, 24);
-            this.buttonChange.TabIndex = 6;
-            this.buttonChange.Text = "Change";
-            this.buttonChange.UseVisualStyleBackColor = true;
-            this.buttonChange.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
             // column1
             // 
@@ -313,6 +271,73 @@ namespace PassVault {
             this.column4.Name = "column4";
             this.column4.ReadOnly = true;
             // 
+            // textBoxDescription
+            // 
+            this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDescription.Enabled = false;
+            this.textBoxDescription.Location = new System.Drawing.Point(8, 405);
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.PlaceholderText = "Description";
+            this.textBoxDescription.Size = new System.Drawing.Size(169, 23);
+            this.textBoxDescription.TabIndex = 1;
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxLogin.Enabled = false;
+            this.textBoxLogin.Location = new System.Drawing.Point(183, 405);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.PlaceholderText = "Login";
+            this.textBoxLogin.Size = new System.Drawing.Size(134, 23);
+            this.textBoxLogin.TabIndex = 2;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPassword.Enabled = false;
+            this.textBoxPassword.Location = new System.Drawing.Point(323, 405);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PlaceholderText = "Password";
+            this.textBoxPassword.Size = new System.Drawing.Size(134, 23);
+            this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.UseSystemPasswordChar = true;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonAdd.Enabled = false;
+            this.buttonAdd.Location = new System.Drawing.Point(463, 405);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(99, 24);
+            this.buttonAdd.TabIndex = 4;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonRemove.Enabled = false;
+            this.buttonRemove.Location = new System.Drawing.Point(568, 405);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(99, 24);
+            this.buttonRemove.TabIndex = 5;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.ButtonRemove_Click);
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonUpdate.Enabled = false;
+            this.buttonUpdate.Location = new System.Drawing.Point(673, 405);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(103, 24);
+            this.buttonUpdate.TabIndex = 6;
+            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.ButtonChange_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -340,17 +365,17 @@ namespace PassVault {
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checkForUpdatesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updatesMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem exitStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TextBox textBoxDescription;
@@ -358,11 +383,13 @@ namespace PassVault {
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonRemove;
-        private System.Windows.Forms.Button buttonChange;
+        private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn column3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn column4;
+        private System.Windows.Forms.ToolStripMenuItem newMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }
 

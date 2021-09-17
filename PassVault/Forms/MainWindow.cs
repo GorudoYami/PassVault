@@ -11,14 +11,15 @@ using System.Windows.Forms;
 
 namespace PassVault {
     public partial class MainWindow : Form {
+        private bool vaultOpen;
         private bool changesMade;
+
+        private SQLiteDatabase db;
+
         public MainWindow() {
             InitializeComponent();
+            vaultOpen = false;
             changesMade = false;
-            dataGridView.Rows.Add("AwU", "UwU", "UwU", true);
-            dataGridView.Rows.Add("WwU", "UwU", "UwU", true);
-            dataGridView.Rows.Add("CwU", "UwU", "UwU", true);
-            dataGridView.Rows.Add("BwU", "UwU", "UwU", true);
         }
 
         private void ButtonAdd_Click(object sender, EventArgs e) {
@@ -45,8 +46,9 @@ namespace PassVault {
             throw new NotImplementedException();
         }
 
-        private string Encrypt(string str) {
-            throw new NotImplementedException();
+        private void NewMenuItem_Click(object sender, EventArgs e) {
+            var dialog = new NewDialog();
+            dialog.ShowDialog();
         }
     }
 }
