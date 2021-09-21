@@ -43,16 +43,16 @@ namespace PassVault {
             this.aboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
+            this.columnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnLogin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnShow = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.menuStrip.SuspendLayout();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -221,10 +221,10 @@ namespace PassVault {
             this.dataGridView.ColumnHeadersHeight = 25;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.column1,
-            this.column2,
-            this.column3,
-            this.column4});
+            this.columnDescription,
+            this.columnLogin,
+            this.columnPassword,
+            this.columnShow});
             this.tableLayoutPanel.SetColumnSpan(this.dataGridView, 6);
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -242,34 +242,6 @@ namespace PassVault {
             this.dataGridView.ShowEditingIcon = false;
             this.dataGridView.Size = new System.Drawing.Size(768, 396);
             this.dataGridView.TabIndex = 0;
-            // 
-            // column1
-            // 
-            this.column1.FillWeight = 30F;
-            this.column1.HeaderText = "Description";
-            this.column1.Name = "column1";
-            this.column1.ReadOnly = true;
-            // 
-            // column2
-            // 
-            this.column2.FillWeight = 30F;
-            this.column2.HeaderText = "Login";
-            this.column2.Name = "column2";
-            this.column2.ReadOnly = true;
-            // 
-            // column3
-            // 
-            this.column3.FillWeight = 30F;
-            this.column3.HeaderText = "Password";
-            this.column3.Name = "column3";
-            this.column3.ReadOnly = true;
-            // 
-            // column4
-            // 
-            this.column4.FillWeight = 10F;
-            this.column4.HeaderText = "Show";
-            this.column4.Name = "column4";
-            this.column4.ReadOnly = true;
             // 
             // textBoxDescription
             // 
@@ -338,6 +310,34 @@ namespace PassVault {
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.ButtonChange_Click);
             // 
+            // columnDescription
+            // 
+            this.columnDescription.FillWeight = 30F;
+            this.columnDescription.HeaderText = "Description";
+            this.columnDescription.Name = "columnDescription";
+            this.columnDescription.ReadOnly = true;
+            // 
+            // columnLogin
+            // 
+            this.columnLogin.FillWeight = 30F;
+            this.columnLogin.HeaderText = "Login";
+            this.columnLogin.Name = "columnLogin";
+            this.columnLogin.ReadOnly = true;
+            // 
+            // columnPassword
+            // 
+            this.columnPassword.FillWeight = 30F;
+            this.columnPassword.HeaderText = "Password";
+            this.columnPassword.Name = "columnPassword";
+            this.columnPassword.ReadOnly = true;
+            // 
+            // columnShow
+            // 
+            this.columnShow.FillWeight = 10F;
+            this.columnShow.HeaderText = "Show";
+            this.columnShow.Name = "columnShow";
+            this.columnShow.ReadOnly = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -384,12 +384,12 @@ namespace PassVault {
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn column3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn column4;
         private System.Windows.Forms.ToolStripMenuItem newMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnLogin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnPassword;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn columnShow;
     }
 }
 
