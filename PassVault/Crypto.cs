@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace PassVault {
     public class Crypto {
-        private Aes aes;
+        private const int saltSize = 64; // in bits
+        private const int keySize = 256; // in bits
         public Crypto(string password) {
-            aes = Aes.Create();
+
         }
 
         public string Encrypt(string data) {
